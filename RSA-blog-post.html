@@ -1,0 +1,255 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Elise Kanber, PhD  </title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Main -->
+        <div id="main">
+            <div class="inner">
+
+                <!-- Header -->
+                    <header id="header">
+                        <a href="RSA-blog-post.html" class="logo"><strong>Elise Kanber</strong> PhD </a>
+                        <ul class="icons">
+                            <li><a href="https://twitter.com/Eliseetal" target="_blank" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                            <!-- <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li> --> 
+                            <!-- <li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li> --> 
+                            <!-- <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li> --> 
+                            <!-- <li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li> --> 
+                            <li><a href="https://www.linkedin.com/in/elise-kanber/" target="_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                            <li><a href="https://github.com/eliseetal" target="_blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
+
+                        </ul>
+                    </header>
+
+                    <section id="intro">
+                        <div class="content">
+                            <header>
+                                <h1><strong> A short intro to Representational Similarity Analysis (RSA)</strong> </h1>
+                                <p> </p>
+                            </header>
+                            <p>
+                                <h2> <u> Some background on the theory </u> </h2>
+
+                                <p align="justify"> Representational similarity analysis (RSA) is a computational method used in cognitive neuroscience to 
+                                understand how our brains represent information. It assumes that stimuli that are similar will display similar 
+                                response patterns in the brain, in regions that are sensitive to this type of information. It uses pairwise 
+                                comparisons of stimuli to reveal their representation in higher order space. 
+                                
+                                <div> There are various ways to run RSA,
+                                two of which I will outline here, using examples from my own work. 
+                                </div> 
+
+                             </p>
+                                </p>
+                        </div>
+                    </section>
+        
+                    <div class="content">
+                    <header> 
+                        <h2><strong><u> Option 1: Constructing a hypothetical model </u></strong></h2>
+                    </header>
+
+                    <p align = "justify"> 
+                        In this approach, a hypothetical model is constructed that details how different stimuli/conditions are expected to be 
+                        related to each other. That is, we construct a matrix of all of our items in our experiment, and make hypothetical pairwise 
+                        comparison predictions about how similar/dissimilar a pair of items should be. We can then see how well this model (also known
+                         as a representational dissimilarity matrix/RDM) correlates with observed neural dissimilarity in each region of the brain we are
+                          interested in. This approach can be particularly useful when wanting to test competing accounts of how information might be represented
+                          in the brain.   
+                    </p>
+
+                    <h3> <u> Example </u> </h3>
+                         <p align="justify">
+                        
+                         In our research, we were interested in decoding regions of the brain sensitive to speaker identity. To do this, subjects actively
+                         attempted to recognise three voices whilst lying in an MRI scanner. One was the voice of a friend or romantic partner,
+                          one was a learned voice, and the last voice was unfamiliar. 
+                          We constructed a hypothetical model that predicted that pairwise comparisons of within-talker items (two different utterances from
+                          the same speaker) should show <b>lower dissimilarity (a.k.a. higher similarity)</b> than pairwise comparisons of between-talker items 
+                         (two utterances from different speakers). 
+                         </p>
+                          <p style="text-align:center;">
+                             <img src="images/hypothetical_RDM.png" alt="hypothetical model depicting zeros for within talker comparisons (low dissimilarity) and ones
+                             for between talker comparisons (indicating high dissimilarity)" style="width:600px;height:600px;" class="center" <figcaption> Hypothetical RDM </figcaption> 
+                             
+                            </p>
+
+                            <p align="justify">  In the prediction RDM above, the matrix is filled with values predicting dissimilarity based on talker identity. Colours show values,
+                                where low numbers indicate low dissimilarity (aka high similarity), and higher numbers indicate high dissimilarity (aka low similarity).  
+                                Here, we are predicting that regions sensitive to talker identity will show these patterns. Note that the matrix is symmetrical about the
+                                 diagonal so we only filled out the bottom half. 
+                                </p>
+
+                                <h3> <u> Comparing the hypothetical model to the observed neural data </u> </h3>
+
+                            <p align="justify"> 
+                                Using the brain data, a matrix similar to the hypothetical model is constructed, which we will call the observed neural dissimilarity matrix (or brain RDM). 
+                                Each cell of this matrix is filled with a dissimilarity value (in our case a correlation co-efficient), which reflects <b> the similarity between the neural
+                                 pattern associated with one item and every other item in the matrix (pairwise comparisons). </b>  
+
+                            <br> 
+                            <br> 
+                                A brain RDM is then computed for every voxel (a 3D cube of brain tissue) location we are interested in in the brain. This can either be computed for the whole
+                                 brain, or for specific regions of interest (ROIs), depending on whether you as a researcher have specific predictions about brain regions that may be involved 
+                                 in the cognitive process of interest. 
+                                
+                                </br> 
+                                </br>
+                                 For our example, as we were interested in representations of identity in the brain, we took a searchlight region of interest approach, using regions identified 
+                                 in a previous study to be involved in voice, face, and person perception.
+                                 
+                                 <p style="text-align:center;">
+                                    <img src="images/ROIs_horz.png" alt="ROIs used in our study" style="width:1500px;height:250px;" class="center" 
+                                    <figcaption> Figure taken from Tsantani et al. (2019), NeuroImage, doi: https://doi.org/10.1016/j.neuroimage.2019.07.017 </figcaption>  
+                                   </p>
+                                 
+                                 
+                                 In practice, a brain RDM was then constructed from neural patterns extracted in turn from
+                                 each voxel and its surrounding neighbourhood of voxels (the size of which we specify), and this is repeated in each region of interest. 
+
+                                 <p style="text-align:center;">
+                                    <img src="images/ONDM.png" alt="Observed neural dissimilarity matrix" style="width:600px;height:600px;" class="center" 
+                                    <figcaption> Observed neural dissimilarity matrix (brain RDM), with correlation values showing dissimilarity in neural patterns of activity for each pairwise comparison. This would be a matrix example from <b> one </b> searchlight location in the region of interest mask. </figcaption>  
+                                   </p> 
+                                   
+                                   <h3> <u> Single-subject Analysis </u> </h3>
+
+                                   The brain RDM is then correlated with the prediction RDM at each searchlight ROI using Pearson's correlation coefficient. Correlation values express how well the prediction RDM 
+                                   characterised the observed neural dissimilarity in response to speech across the same and different identities. 
+                                   This analysis is repeated for each of the subjects in the experiment, and a correlation map is calculated for each subject, containing a single correlation value at each searchlight location.  
+                                    
+                                </p>
+
+        
+                                <h3> <u> Group-level Analysis  </u> </h3>
+<p> So, from each participant, we now have a map of correlation values at each brain region included in our analysis. These correlation values show us how well our hypothetical model (prediction RDM) 
+    characterised the observed neural dissimilarity in response to speech across the same and different identities, at each brain region studied. 
+<br>
+At the group-level, these correlation maps can be analysed by conducting one-sample t-tests at each voxel location to determine whether correlations significantly differed from zero in the group. Because there are many voxel locations, we are  
+running lots of one-sample t-tests. Therefore, to correct for multiple comparisons, we use something called "Threshold Free Cluster Enhancement" or TFCE, which adjusts for multiple comparisons. 
+</br> 
+
+<br>
+Significant clusters in our example would indicate brain regions that differentiate between different identities (lower similarity) but show consistencies in response to variable instance of the same identity (higher similarity), which is what our prediction model depicts. 
+This gives us insights into brain regions that are sensitive to vocal identity information. 
+
+</br>
+</br> 
+ </p>
+
+
+                    </div>
+                    <div class="content">
+                        <header> 
+                            <h2><strong><u> Option 2: Compare Observed Neural Dissimilarity directly </u></strong></h2>
+                        </header>
+                        <p align="justify"> 
+                            In this approach, instead of conducting an a priori model RDM (prediction model), we directly compare observed neural 
+                            dissimilarity across different parts of our model that we are interested in. We just don't make specific predictions about
+                            the dissimilarity values in each cell of our matrix. </p>
+
+                        <h3> <u> Example </u> </h3>
+                        <p align="justify"> 
+                            We are still interested in finding regions that are sensitive to speaker identity, and expect that such regions will show lower 
+                            dissimilarity (higher similarity) when hearing different instances of the same speaker (telling together), and higher dissimilarity
+                             (lower similarity) when hearing instances of two different speakers (telling apart).  
+
+                            So if we were to construct an RDM, we can specify the parts of the matrix we are interested in comparing. 
+                        </p>
+                        <p style="text-align:center;">
+                            <img src="images/model_ondm.png" alt="model ONDM" style="width:600px;height:600px;" class="center" 
+                            <figcaption> RDM showing the different parts of the matrix we are interested in comparing in the brain data. Purple squares = within-identity or "telling together" comparisons, Yellow squares = between-identity or "telling apart" comparisons </figcaption>  
+                           </p> 
+
+                           <h3> <u> Single-subject Analysis  </u> </h3>
+
+                        <p align="justify"> In this approach, pairwise similarity values are calculated for each item vs. every other item for each voxel location in the brain (in the same way as the brain RDM above). Next, when comparing categories of interest (telling together vs. telling apart) 
+                            in your observed neural matrix, these values (from the pairwise comparisons of items) within each category are averaged. </p>
+
+                            <p style="text-align:center;">
+                                <img src="images/mean_ondm.png" alt="mean ONDM" style="width:600px;height:600px;" class="center" 
+                                <figcaption> Example of a brain RDM in one voxel location, whereby the correlation values from each pairwise comparison within each condition of interest (telling together, telling apart) has been averaged. Purple squares = within-identity or "telling together" comparisons, Yellow squares = between-identity or "telling apart" comparisons </figcaption>  
+                               </p> 
+
+                               <p align="justify"> 
+                                So, at the end of the single-subject analysis, there will be two values per voxel location of interest per participant: one of these numbers would be the 
+                                dissimilarity measure for within-speaker comparisons (telling together), and one would be the dissimilarity measure for between-speaker comparisons (telling apart). 
+
+                               </p>
+                               
+                               <table>
+                                <tr>
+                                <th>Participant</th>
+                                <th>Voxel 1</th>
+                                  <th>Voxel 2</th>
+                                  <th>Voxel 3</th>
+                                  <th>Voxel 4 </th>
+                                  <th>...</th>
+                                  <th>Voxel n</th>
+                                </tr>
+                                <tr>
+                                    <td>Participant 1</td>
+                                    <td>0.02, 0.51</td>
+                                  <td>0.47, 0.65</td>
+                                  <td>0.16, 0.98</td>
+                                  <td>0.67, 0.76</td>
+                                  <th>...</th>
+                                  <td>0.52, 0.17</td>
+                                </tr>
+                                <tr>
+                                    <td>Participant 2</td>
+                                  <td>0.51, 0.33</td>
+                                  <td>0.42, 0.71</td>
+                                  <td>0.18, 0.62</td>
+                                  <td>0.04, 0.82</td>
+                                  <th>...</th>
+                                  <td>0.75, 0.23</td>
+                                </tr>
+
+                                <tr>
+                                    <td>...</td>
+                                    <td>0.61, 0.33</td>
+                                    <td>0.12, 0.22</td>
+                                    <td>0.06, 0.91</td>
+                                    <td>0.24, 0.32</td>
+                                    <th>...</th>
+                                    <td>0.65, 0.13</td>
+                                  </tr>
+
+
+                                <tr>
+                                    <td>Participant n</td>
+                                    <td>0.61, 0.33</td>
+                                    <td>0.72, 0.21</td>
+                                    <td>0.08, 0.77</td>
+                                    <td>0.34, 0.42</td>
+                                    <th>...</th>
+                                    <td>0.65, 0.23</td>
+                                  </tr>
+                              </table>
+                              <h3> <u> Group-level Analysis  </u> </h3>
+<p> For each participant, these two values per voxel location are subjected to a paired samples t-test, in order to find locations where there is a significant difference in neural
+     patterns of activation for telling together and telling apart (i.e. significant difference between these two parts of the matrix). In other words, where are the dissimilarity values 
+     for telling toghether significantly different than the dissimilarity values for telling apart? 
+     
+    <br> 
+<b> Note:</b> in this example we were only interested in comparing two different parts of the matrix (within-identity comparisons vs. between-identity comparisons), however, if you were interested in comparing three different conditions, you would end up with 3 values per voxel location, and these would be subjected to a one-way ANOVA at the group-level. 
+</br>
+ </p>
+
+ <p> And there you have it! These are two ways that RSA can be used to gather insights into how the identity of a speaker's voice may be coded/represented in the brain </p>
+                        </div>
