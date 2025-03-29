@@ -10,6 +10,17 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			/* Hide Gist line numbers */
+			.gist .blob-num {
+				display: none !important;
+			}
+	
+			/* Adjust line spacing to look cleaner */
+			.gist .blob-wrapper {
+				line-height: 1.4 !important;
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -35,7 +46,27 @@
 									</ul>
 								</header>
 		<!-- <script src="https://gist.github.com/eliseetal/3f81b40ea44954208c3cacb7b3ad7ea2.js"></script> -->
+	    <h2>Building a Customer API Wrapper with RandomUser</h2>
+		<p>This mini-project involves creating a lightweight customer API wrapper using the RandomUser API for a fake use case. The goal is to design a Python class that retrieves customer data while incorporating data validation and transformation.</p>
+		
+		<h3>Key Features:</h3>
+		<ul>
+			<li>Developed a class with a <code>get_customers</code> method to fetch customer data.</li>
+			<li>Allowed users to specify the number of customers (default: <code>n=100</code>).</li>
+			<li>Made API calls via GET requests.</li>
+			<li>Validated the response using <strong>Pydantic</strong> to ensure data integrity.</li>
+			<li>Transformed the API output into a <strong>pandas DataFrame</strong> for easy analysis.</li>
+		</ul>
 
-		<script src="https://gist.github.com/eliseetal/d5dddeb21b8ed1399f3170c7d67971a0.js"></script>
+		<p><strong>Time to complete:</strong> Took ~1 day.</p>
+		
+		<h3>Customers.py</h3>
+		<p>Script that fetches customer data from the RandomUser API, validates it using Pydantic, converts it into a pandas DataFrame, and saves it as a CSV file.</p>
+		<script src="https://gist.github.com/eliseetal/60fafbe6a4ccc52c484f782a88748c35.js"></script>
+
+		<h3>schema.py</h3>
+		<p>Defines Pydantic models for validating and structuring customer data, including name, location, birthdate, and picture information, based on the RandomUser API response.</p>
+		<script src="https://gist.github.com/eliseetal/0d7f7291cf15870dd61e3d9311095afc.js"></script>
+
 	
 		
